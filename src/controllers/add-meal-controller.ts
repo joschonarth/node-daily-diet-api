@@ -11,7 +11,7 @@ export async function addMeal(request: FastifyRequest, reply: FastifyReply) {
     date: z
       .string()
       .refine((val) => !isNaN(Date.parse(val)), {
-        message: 'Data inválida',
+        message: 'Data inválida', // #############################################
       })
       .optional(),
     inDiet: z.boolean(),
