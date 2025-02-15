@@ -1,22 +1,10 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
-import z from 'zod'
 import { MealsRepository } from '@/repositories/meals-repository'
 import { UserNotFoundError } from '@/errors/user-not-found-error'
 import { UnauthenticatedError } from '@/errors/unauthenticated-error'
+import { mealBodySchema } from '@/schemas/meal-body-schema'
 
 export async function addMeal(request: FastifyRequest, reply: FastifyReply) {
-  const mealBodySchema = z.object({
-    name: z.string(),
-    description: z.string(),
-    date: z
-      .string()
-      .refine((val) => !isNaN(Date.parse(val)), {
-        message: 'Data inválida', // #############################################
-      })
-      .optional(),
-    inDiet: z.boolean(),
-  })
-
   const { name, description, date, inDiet } = mealBodySchema.parse(request.body)
 
   try {
