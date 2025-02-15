@@ -5,7 +5,7 @@ import { env } from './env'
 
 export const app = fastify()
 
-app.register(userRoutes, { prefix: '/users' })
+app.register(userRoutes)
 
 app.setErrorHandler((error, _, reply) => {
   if (error instanceof ZodError) {
