@@ -1,4 +1,5 @@
 import { addMeal } from '@/controllers/add-meal-controller'
+import { deleteMeal } from '@/controllers/remove-meal-controller'
 import { updateMeal } from '@/controllers/update-meal-controller'
 import { authenticateMiddleware } from '@/middlewares/authenticate-middleware'
 import { FastifyInstance } from 'fastify'
@@ -8,4 +9,5 @@ export async function mealRoutes(app: FastifyInstance) {
 
   app.post('/', addMeal)
   app.put('/:id', updateMeal)
+  app.delete('/:id', deleteMeal)
 }

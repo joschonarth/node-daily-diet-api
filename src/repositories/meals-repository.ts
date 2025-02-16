@@ -24,4 +24,10 @@ export class MealsRepository implements MealsRepositoryInterface {
     })
     return meal
   }
+
+  async delete(id: string) {
+    await prisma.meal.delete({
+      where: { id },
+    })
+  }
 }
