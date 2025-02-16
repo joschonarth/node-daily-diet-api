@@ -1,7 +1,6 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { MealsRepository } from '@/repositories/meals-repository'
 import { UserNotFoundError } from '@/errors/user-not-found-error'
-import { UnauthenticatedError } from '@/errors/unauthenticated-error'
 import { mealUpdateBodySchema } from '@/schemas/meal-update-body-schema'
 import { NotFoundError } from '@/errors/not-found-error'
 import { ForbiddenError } from '@/errors/forbidden-error'
@@ -21,10 +20,6 @@ export async function updateMeal(
 
   try {
     const userId = request.user?.sub
-
-    if (!userId) {
-      throw new UnauthenticatedError()
-    }
 
     const mealsRepository = new MealsRepository()
 
