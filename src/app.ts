@@ -16,7 +16,7 @@ app.register(fastifyJwt, {
 })
 
 app.register(userRoutes)
-app.register(mealRoutes, { prefix: 'meal' })
+app.register(mealRoutes, { prefix: 'meals' })
 
 app.setErrorHandler((error, _, reply) => {
   if (error instanceof ZodError) {
