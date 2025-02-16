@@ -3,13 +3,10 @@ import { MealsRepository } from '@/repositories/meals-repository'
 import { UserNotFoundError } from '@/errors/user-not-found-error'
 import { NotFoundError } from '@/errors/not-found-error'
 import { ForbiddenError } from '@/errors/forbidden-error'
-
-interface GetMealParams {
-  id: string
-}
+import { MealsParamsInterface } from '@/interfaces/meals-params-interface'
 
 export async function getMeal(
-  request: FastifyRequest<{ Params: GetMealParams }>,
+  request: FastifyRequest<{ Params: MealsParamsInterface }>,
   reply: FastifyReply,
 ) {
   const mealId = request.params.id

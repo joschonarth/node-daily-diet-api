@@ -4,13 +4,10 @@ import { UserNotFoundError } from '@/errors/user-not-found-error'
 import { mealUpdateBodySchema } from '@/schemas/meal-update-body-schema'
 import { NotFoundError } from '@/errors/not-found-error'
 import { ForbiddenError } from '@/errors/forbidden-error'
-
-interface UpdateMealParams {
-  id: string
-}
+import { MealsParamsInterface } from '@/interfaces/meals-params-interface'
 
 export async function updateMeal(
-  request: FastifyRequest<{ Params: UpdateMealParams }>,
+  request: FastifyRequest<{ Params: MealsParamsInterface }>,
   reply: FastifyReply,
 ) {
   const { name, description, date, inDiet } = mealUpdateBodySchema.parse(
