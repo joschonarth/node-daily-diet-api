@@ -37,4 +37,34 @@ export class MealsRepository implements MealsRepositoryInterface {
     })
     return meals
   }
+
+  async getSummary(userId: string) {
+    const meals = await prisma.meal.findMany({
+      where: { userId },
+      orderBy: { dateTime: 'asc' },
+    })
+
+    const totalMeals = meals.length
+    const totalOnDiet = meals.filter((meal) => meal.inDiet).length
+    const totalOffDiet = totalMeals - totalOnDiet
+
+    let bestStreak = 0
+    let currentStreak = 0
+
+    for (const meal of meals) {
+      if (meal.inDiet) {
+        currentStreak++
+        bestStreak = Math.max(bestStreak, currentStreak)
+      } else {
+        currentStreak = 0
+      }
+    }
+
+    return {
+      totalMeals,
+      totalOnDiet,
+      totalOffDiet,
+      bestStreak,
+    }
+  }
 }
