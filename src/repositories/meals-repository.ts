@@ -30,4 +30,11 @@ export class MealsRepository implements MealsRepositoryInterface {
       where: { id },
     })
   }
+
+  async findAll(userId: string) {
+    const meals = await prisma.meal.findMany({
+      where: { userId },
+    })
+    return meals
+  }
 }
