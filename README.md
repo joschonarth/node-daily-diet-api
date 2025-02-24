@@ -50,13 +50,19 @@ O **Daily Diet API** é uma aplicação **RESTful** desenvolvida para auxiliar n
     npm install
     ```
 
-4. **Execute as migrações do banco de dados:**
+4. Inicie o banco de dados **PostgreSQL** utilizando o container **Docker** com a imagem ``bitnami/postgresql``:
+
+   ```bash
+   docker-compose up -d
+   ```
+
+5. **Execute as migrações do banco de dados:**
 
     ```bash
     npx prisma migrate dev
     ```
 
-5. **Inicie a aplicação:**
+6. **Inicie a aplicação:**
 
     ```bash
     npm run dev
