@@ -1,0 +1,77 @@
+@baseUrl = http://localhost:3333
+@authToken = {{login.response.body.token}}
+@mealId = {{create_meal.response.body.id}}
+
+# @name create_user
+POST {{baseUrl}}/user
+Content-Type: application/json
+
+{
+  "username": "username",
+  "email": "user@email.com",
+  "password": "password"
+}
+
+###
+
+# @name login
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "email": "user@email.com",
+  "password": "password"
+}
+
+###
+
+# @name create_meal
+POST {{baseUrl}}/meals
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "name": "Lunch",
+  "description": "Grilled chicken",
+  "inDiet": false
+}
+
+###
+
+# @name get_meal
+GET {{baseUrl}}/meals/{{mealId}}
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+###
+
+# @name update_meal
+PUT {{baseUrl}}/meals/{{mealId}}
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "description": "Grilled chicken and green salad",
+  "inDiet": true
+}
+
+###
+
+# @name delete_meal
+DELETE {{baseUrl}}/meals/{{mealId}}
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+###
+
+# @name list_meals
+GET {{baseUrl}}/meals
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+###
+
+# @name get_summary
+GET {{baseUrl}}/meals/summary
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
