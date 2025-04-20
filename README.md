@@ -21,10 +21,10 @@ O **Daily Diet API** é uma aplicação **RESTful** desenvolvida para auxiliar n
 - 👤 **Criar usuário**: Permite registrar um novo usuário com senha criptografada.
 - 🔑 **Login**: Autenticação via JWT.
 - 🍽️ **Adicionar uma refeição**: Registra uma nova refeição no sistema.
+- 🔍 **Retornar uma refeição específica**: Obtém detalhes de uma refeição.
 - ✏️ **Atualizar uma refeição**: Altera os dados de uma refeição específica.
 - ❌ **Deletar uma refeição**: Remove uma refeição do sistema.
 - 📄 **Listar todas as refeições**: Retorna todas as refeições registradas pelo usuário.
-- 🔍 **Retornar uma refeição específica**: Obtém detalhes de uma refeição.
 - 📊 **Gerar resumo**: Calcula estatísticas das refeições do usuário.
 
 ## 🔧 Instalação
@@ -117,8 +117,24 @@ O **Daily Diet API** é uma aplicação **RESTful** desenvolvida para auxiliar n
     {
         "name": "Breakfast",
         "description": "Scrambled eggs and bread",
-        "date": "2025-02-15T08:00:00",
         "inDiet": false
+    }
+    ```
+
+### 🔍 Retornar uma Refeição Específica
+
+- **Método**: `GET`
+- **URL**: `/meals/:id`
+- **Resposta:**
+
+    ```json
+    {
+        "id": "de3bf9e0-b9bc-4730-b615-269382edfef3",
+        "name": "Breakfast",
+        "description": "Scrambled eggs and wholemeal bread",
+        "date": "2025-02-15T08:00:00",
+        "inDiet": true,
+        "userId": "f3c63f6b-9ece-4f4f-b812-e5f4dc9e0492"
     }
     ```
 
@@ -130,7 +146,6 @@ O **Daily Diet API** é uma aplicação **RESTful** desenvolvida para auxiliar n
 
     ```json
     {
-        "name": "Breakfast",
         "description": "Scrambled eggs and wholemeal bread",
         "inDiet": true
     }
@@ -174,23 +189,6 @@ O **Daily Diet API** é uma aplicação **RESTful** desenvolvida para auxiliar n
         },
     ]
 
-    ```
-
-### 🔍 Retornar uma Refeição Específica
-
-- **Método**: `GET`
-- **URL**: `/meals/:id`
-- **Resposta:**
-
-    ```json
-    {
-        "id": "de3bf9e0-b9bc-4730-b615-269382edfef3",
-        "name": "Breakfast",
-        "description": "Scrambled eggs and wholemeal bread",
-        "date": "2025-02-15T08:00:00",
-        "inDiet": true,
-        "userId": "f3c63f6b-9ece-4f4f-b812-e5f4dc9e0492"
-    }
     ```
 
 ### 📊 Gerar Resumo
@@ -241,7 +239,7 @@ As rotas da API estão protegidas por autenticação **JWT** (JSON Web Token). P
     - Selecione o tipo **Bearer Token**.
     - No campo **Token**, insira o valor do seu token JWT obtido no passo anterior.
 
-Agora você pode fazer requisições para as rotas protegidas com o token JWT.
+Agora você pode fazer requisições para as rotas protegidas com o **token JWT**.
 
 ## 🤝 Contribuições
 
