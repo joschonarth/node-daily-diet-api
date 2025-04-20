@@ -11,7 +11,7 @@ export async function addMeal(request: FastifyRequest, reply: FastifyReply) {
 
   const mealsRepository = new MealsRepository()
 
-  await mealsRepository.create({
+  const meal = await mealsRepository.create({
     name,
     description,
     dateTime,
@@ -19,5 +19,5 @@ export async function addMeal(request: FastifyRequest, reply: FastifyReply) {
     user: { connect: { id: userId } },
   })
 
-  return reply.status(201).send()
+  return reply.status(201).send(meal)
 }
