@@ -1,6 +1,33 @@
-# 🥗 Daily Diet API
+<h1 align="center">🥗 Daily Diet API</h1>
 
-O **Daily Diet API** é uma aplicação **RESTful** desenvolvida para auxiliar no controle da alimentação diária. Com ela, os usuários podem registrar refeições, acompanhar estatísticas nutricionais e gerenciar sua dieta de forma prática e eficiente.
+<p align="center">🥗 Uma aplicação RESTful desenvolvida para auxiliar no controle da alimentação diária.
+  <br/><br/>
+  <!-- Último commit -->
+  <img src="https://img.shields.io/github/last-commit/joschonarth/node-daily-diet-api?style=for-the-badge&color=F28BA9&labelColor=1C1E26" alt="last-commit">
+  <!-- Linguagem principal -->
+  <img src="https://img.shields.io/github/languages/top/joschonarth/node-daily-diet-api?style=for-the-badge&color=B181F1&labelColor=1C1E26" alt="top-language">
+  <!-- Contador de linguagens -->
+  <img src="https://img.shields.io/github/languages/count/joschonarth/node-daily-diet-api?style=for-the-badge&color=61ffca&labelColor=1C1E26" alt="languages-count">
+  <!-- Licença -->
+  <img src="https://img.shields.io/github/license/joschonarth/node-daily-diet-api?style=for-the-badge&color=F28BA9&labelColor=1C1E26" alt="license">
+</p>
+
+## 📑 Índice
+
+- [👀 Visão Geral](#-visão-geral)
+- [🛠️ Tecnologias Utilizadas](#️-tecnologias-utilizadas)
+- [⚙️ Funcionalidades](#️-funcionalidades)
+- [🔧 Instalação](#-instalação)
+- [🔗 Endpoints](#-endpoints)
+- [🔐 Autenticação](#-autenticação)
+- [🤝 Contribuições](#-contribuições)
+- [⭐ Apoie este Projeto](#-apoie-este-projeto)
+- [📜 Licença](#-licença)
+- [📞 Contato](#-contato)
+
+## 👀 Visão Geral
+
+O **Daily Diet API** é uma aplicação **RESTful** desenvolvida com o objetivo de facilitar o controle da alimentação diária dos usuários. Através dela, é possível registrar e gerenciar refeições, acompanhar estatísticas nutricionais e obter um resumo com dados relevantes da dieta. Com autenticação via JWT, integração com PostgreSQL e arquitetura moderna baseada em Node.js, Fastify e Prisma, a API proporciona uma experiência segura, eficiente e escalável para quem deseja manter hábitos alimentares mais organizados e saudáveis.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -243,7 +270,11 @@ Agora você pode fazer requisições para as rotas protegidas com o **token JWT*
 
 ## 🤝 Contribuições
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests com melhorias ou correções. 🚀
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests com melhorias ou correções. ✨
+
+## ⭐ Apoie este Projeto
+
+Se este projeto te ajudou ou te inspirou de alguma forma, não esqueça de deixar uma ⭐ no repositório! Isso faz toda a diferença! 🚀
 
 ## 📜 Licença
 
